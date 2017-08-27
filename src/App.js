@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {encode, decode} from "deckstrings";
+import { Col, Row, Grid } from 'react-bootstrap';
 
 const getHearthstoneJSONUrl = () => "https://api.hearthstonejson.com/v1/20457/enUS/cards.collectible.json";
 
@@ -103,15 +104,21 @@ class App extends Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
-        <div className="App-intro">
-          {this.state.cardJSON[this.state.decoded.heroes] && 
-            <h2>{this.state.cardJSON[this.state.decoded.heroes].playerClass}</h2>
-          }
-          {this.state.decoded.format && 
-            <h3>{format}</h3>
-          }
-          {deck}
-        </div>
+        <Grid>
+          <Row className="App-intro">
+            <Col sm={6} md={6}>
+              {this.state.cardJSON[this.state.decoded.heroes] && 
+                <h2>{this.state.cardJSON[this.state.decoded.heroes].playerClass}</h2>
+              }
+              {this.state.decoded.format && 
+                <h3>{format}</h3>
+              }
+              <div className="Decklist">
+                {deck}
+              </div>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
