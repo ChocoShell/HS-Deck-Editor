@@ -5,6 +5,8 @@
   Export deck lists
   Figure elegant way to access card json.
   Refactor into separate functions and files.
+  Enter deck code into a text field
+    -  Ignore all the commented out text
 */
 
 import React, { Component } from 'react';
