@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {encode, decode} from "deckstrings";
-import { Col, Row, Grid } from 'react-bootstrap';
+import { Col, Row, Grid, Well } from 'react-bootstrap';
 
 const getHearthstoneJSONUrl = () => "https://api.hearthstonejson.com/v1/20457/enUS/cards.collectible.json";
 
@@ -113,9 +113,9 @@ class App extends Component {
               {this.state.decoded.format && 
                 <h3>{format}</h3>
               }
-              <div className="Decklist">
+              <Well className="Decklist">
                 {deck}
-              </div>
+              </Well>
             </Col>
           </Row>
         </Grid>
